@@ -1,0 +1,25 @@
+Tasks
+1) Initial Server Setup -- Done
+
+2) Connect Database -- Done
+
+3) Create Authentication & User Models
+
+4) Create Authentication & User Routes
+
+5) Test using Postman
+
+
+
+
+
+
+
+Auth Controllers
+
+
+User Controllers
+
+
+Profile Controllers
+
