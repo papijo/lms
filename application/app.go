@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/labstack/echo/v4"
-	postgres "github.com/papijo/lms/db/postgres"
+	"github.com/papijo/lms/db/postgresdb"
 	"github.com/papijo/lms/utils/config"
 	"github.com/papijo/lms/utils/middlewares"
 	"gorm.io/gorm"
@@ -26,12 +26,17 @@ func Start() (*echo.Echo, *gorm.DB) {
 
 	//Database Operations
 	//Connect to the Database (PostgreSQL)
-	db, err := postgres.InitializeDB()
+	db, err := postgresdb.InitializeDB()
 	if err != nil {
 		log.Fatal("Failed to connect to database: ", err)
 	}
 
 	//Migrate the Database Schema
+
+	err = postgresdb.MigrateSchema(db)
+	if err != nil {
+		log.Fatal("Failed to migrate database schema: ", err)
+	}
 
 	//Initialise Echo Instance
 	e := echo.New()
@@ -87,7 +92,7 @@ func Stop(e *echo.Echo, db *gorm.DB) error {
 
 	defer func() {
 		//Close the Database Connection
-		if err := postgres.CloseDB(db); err != nil {
+		if err := postgresdb.CloseDB(db); err != nil {
 			log.Fatalf("Failed to close Database Connection: %s", err.Error())
 		}
 		log.Println("⚡️🚀 Database Connection Closed")

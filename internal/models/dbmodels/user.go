@@ -20,6 +20,7 @@ type User struct {
 	DeletedAt           *time.Time `json:"deleted_at,omitempty"`
 	AdminStatus         bool       `json:"admin_status"` // true if the user is an admin, false otherwise
 	StaffStatus         bool       `json:"staff_status"`
+	InternStatus        bool       `json:"intern_status"`
 	StudentStatus       bool       `json:"student_status"`
 	IsActive            bool       `json:"is_active"`
 }

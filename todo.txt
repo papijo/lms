@@ -9,17 +9,58 @@ Tasks
 
 5) Test using Postman
 
-
-
-
+//Database Tables
+1) User
+2) BioData
+3) StudentProfile
+4) StaffProfile
+5) InternProfile
+6) AdminProfile
+7) Course
+8) Major
+9) Laboratory
+10) Subject
+11) Topic
+12) Learning Material
+13) Educational Institution
+14) Tasks
+15) Assessments
 
 
 
 Auth Controllers
+1) Create User (Student)
+2) Create User (Staff)
+3) Create User (Admin)
+4) Create User (Intern)
+4) Verify Account
+5) Login
+6) New Verification Token
+7) Change Password
+8) Verify Changed Password
+
+
 
 
 User Controllers
+1) Get all Users
+2) Get all Staff
+3) Get all Students
+4) Get all Staff
+5) Get all Interns
+6) Edit User Information
+7) Delete User Information
+8) Create Bio Data
+9) Get Verified Users
+10) Get Unverified Users
+11) Edit User Password
 
 
 Profile Controllers
+1) CRUD Profile (Student)
+2) CRUD Profile (Staff)
+3) CRUD Profile (Admin)
+4) CRUD Profile (Intern)
 
+
+//Academic Controllers
